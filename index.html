@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarvesh Sinha — Data Analytics & Insights</title>
+<meta name="description" content="Sarvesh Sinha — B.Tech CSE Student, Data Science & Analytics Enthusiast. Portfolio of EDA projects, BI dashboards and ML notebooks.">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-basedeep text-slate-200 font-body antialiased selection:bg-cyan-500/30 no-scroll">
+  <div id="preloader">
+    <div class="loader-wrap">
+      <div class="loader-kicker">Welcome to my portfolio</div>
+      <div class="loader-name">SARVESH SINHA</div>
+      <div class="loader-role" id="loaderRole">DATA ANALYST</div>
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+
+<!-- ================= NAV ================= -->
+<nav id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 glass rounded-b-2xl lg:rounded-2xl lg:mt-3 px-5 border border-white/5">
+      <a href="#home" class="font-display font-bold text-lg tracking-tight text-white">
+        Sarvesh<span class="text-cyan">.</span><span class="text-emerald">Sinha</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
+        <a href="#skills" class="nav-link hover:text-cyan-soft">Skills</a>
+        <a href="#projects" class="nav-link hover:text-cyan-soft">Projects</a>
+        <a href="#insights" class="nav-link hover:text-cyan-soft">Insights</a>
+        <a href="#journey" class="nav-link hover:text-cyan-soft">Journey</a>
+        <a href="#contact" class="nav-link hover:text-cyan-soft">Contact</a>
+      </div>
+      <a href="#contact" class="hidden md:inline-flex items-center gap-1.5 text-xs font-mono font-medium px-4 py-2 rounded-full border border-cyan-500/40 text-cyan-soft hover:bg-cyan-500/10 transition">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-soft animate-pulse"></span> Available for work
+      </a>
+      <button id="menuBtn" class="md:hidden text-slate-200" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden glass mt-2 rounded-2xl border border-white/5 p-4 flex flex-col gap-3 text-sm">
+      <a href="#skills" class="py-1.5">Skills</a>
+      <a href="#projects" class="py-1.5">Projects</a>
+      <a href="#insights" class="py-1.5">Insights</a>
+      <a href="#journey" class="py-1.5">Journey</a>
+      <a href="#contact" class="py-1.5">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header id="home" class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
+  <div class="absolute inset-0 grid-overlay pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[1.15fr_0.85fr] gap-14 items-center relative z-10">
+    <!-- Text -->
+    <div>
+      <div class="inline-flex items-center gap-2 font-mono text-xs text-emerald-soft border border-emerald-500/30 rounded-full px-3 py-1 mb-6 bg-emerald-500/5">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-soft"></span>
+        SELECT * FROM insights WHERE noise = false;
+      </div>
+
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.08] text-white tracking-tight">
+        Transforming Raw Data into
+        <span class="text-gradient">Actionable Insights.</span>
+      </h1>
+
+      <p id="typeLine" class="mt-4 font-mono text-cyan-soft text-base sm:text-lg h-7 type-cursor"></p>
+
+      <p class="mt-5 text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed">
+        I'm <span class="text-slate-200 font-medium">Sarvesh Sinha</span>, a B.Tech CSE student at
+        Quantum University, Roorkee, who turns messy datasets into dashboards, models and stories
+        that hold up under scrutiny.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a href="#projects" class="group inline-flex items-center gap-2 bg-gradient-to-r from-cyan to-emerald text-basedeep font-semibold text-sm px-6 py-3.5 rounded-xl shadow-glowCyan hover:brightness-110 transition">
+          Explore Projects
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://drive.google.com/file/d/1nag8Y4elBkuLy4sMP8M3U24Sh9EdpV49/view?usp=sharing" download class="inline-flex items-center gap-2 border border-cyan-500/40 text-cyan-soft font-semibold text-sm px-6 py-3.5 rounded-xl hover:bg-cyan-500/10 hover:shadow-glowCyan transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download Resume
+        </a>
+      </div>
+
+      <div class="mt-10 flex items-center gap-6 text-slate-500">
+        <a href="https://github.com/sarveshs-sinha" class="hover:text-cyan-soft transition" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.87 3.15 9 7.53 10.46.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.05-3.06.67-3.71-1.3-3.71-1.3-.5-1.28-1.22-1.62-1.22-1.62-1-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.58 1.2 3.2.92.1-.71.38-1.2.7-1.48-2.44-.28-5.01-1.22-5.01-5.44 0-1.2.43-2.19 1.13-2.96-.11-.28-.49-1.4.11-2.92 0 0 .92-.3 3.02 1.13a10.5 10.5 0 0 1 5.5 0c2.1-1.43 3.02-1.13 3.02-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.76 1.13 2.96 0 4.23-2.58 5.16-5.03 5.43.39.34.74 1.02.74 2.06 0 1.49-.01 2.68-.01 3.05 0 .29.2.64.76.53 4.37-1.46 7.52-5.6 7.52-10.46C23.02 5.24 18.27.5 12 .5Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sarvesh-sinha-b98621288/" class="hover:text-cyan-soft transition" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+        </a>
+        <a href="mailto:sarveshsinha18@gmail.com"  class="hover:text-cyan-soft transition" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor">
+        <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+        </svg>
+
+</a>
+      </div>
+    </div>
+
+    <!-- Photo -->
+    <div class="relative flex justify-center lg:justify-end">
+      <div class="relative w-64 h-64 sm:w-80 sm:h-80 float-y" id="tiltWrap">
+        <div class="absolute inset-0 hex-glow-ring blur-[2px] opacity-80"></div>
+        <div class="absolute inset-[6px] hex-glow-ring opacity-90"></div>
+        <div class="absolute inset-[12px] hex-frame overflow-hidden bg-panel tilt-target" id="tiltTarget">  
+            <img src="file_0000000045548211afb528e7b446efb0.png" alt="Sarvesh Sinha" class="w-full h-full object-cover object-[center_30%]"   
+               onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="hidden w-full h-full items-center justify-center bg-gradient-to-br from-panel to-basedeep font-display text-6xl font-bold text-gradient">
+            SS
+          </div>
+        </div>
+        <!-- orbiting data chips -->
+        <div class="absolute -left-6 top-6 glass rounded-lg px-3 py-1.5 text-xs font-mono text-emerald-soft border border-emerald-500/30 shadow-glowEmerald hidden sm:block">df.shape</div>
+        <div class="absolute -right-8 bottom-10 glass rounded-lg px-3 py-1.5 text-xs font-mono text-cyan-soft border border-cyan-500/30 shadow-glowCyan hidden sm:block">sns.barplot</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ticker strip -->
+  <div class="absolute bottom-0 inset-x-0 border-t border-white/5 bg-basedeep/70 backdrop-blur py-3 overflow-hidden">
+    <div class="flex whitespace-nowrap ticker-track font-mono text-xs text-slate-500 gap-10">
+      <span class="flex gap-10" id="tickerContent"></span>
+      <span class="flex gap-10" aria-hidden="true" id="tickerContentDup"></span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="relative py-28 px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="fade-up mb-14 max-w-2xl">
+      <span class="font-mono text-xs text-cyan-soft tracking-widest uppercase">Skill Matrix</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2">Tools I query, clean, and model with.</h2>
+      <p class="text-slate-400 mt-3">Two working stacks — one for wrangling and explaining data, one for shipping it to the web.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6">
+      <!-- Data Analytics -->
+      <div class="fade-up glass glass-border-glow rounded-2xl p-7">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-soft">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V9m6 10V4m6 15v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-lg text-white">Data Analytics</h3>
+        </div>
+        <div class="space-y-4" id="barsAnalytics"></div>
+      </div>
+
+      <!-- Web -->
+      <div class="fade-up glass glass-border-glow rounded-2xl p-7">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-soft">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="M4 10h16" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-lg text-white">Web Technologies</h3>
+        </div>
+        <div class="space-y-4" id="barsWeb"></div>
+
+        <h4 class="font-mono text-xs text-slate-500 uppercase tracking-widest mt-8 mb-3">Also comfortable with</h4>
+        <div class="flex flex-wrap gap-2" id="tagCloud"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="relative py-28 px-6 lg:px-8 border-t border-white/5">
+  <div class="max-w-6xl mx-auto">
+    <div class="fade-up mb-10 max-w-2xl">
+      <span class="font-mono text-xs text-emerald-soft tracking-widest uppercase">Case Files</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2">Featured Projects</h2>
+      <p class="text-slate-400 mt-3">A working sample of analysis, dashboards, and models — filter by stack.</p>
+    </div>
+
+    <div class="fade-up flex flex-wrap gap-2 mb-10" id="filterBar">
+      <button class="filter-btn active font-mono text-xs px-4 py-2 rounded-full border border-white/10 text-slate-300 transition" data-filter="all">All</button>
+      <button class="filter-btn font-mono text-xs px-4 py-2 rounded-full border border-white/10 text-slate-300 transition" data-filter="python">Python</button>
+      <button class="filter-btn font-mono text-xs px-4 py-2 rounded-full border border-white/10 text-slate-300 transition" data-filter="powerbi">Power BI</button>
+      <button class="filter-btn font-mono text-xs px-4 py-2 rounded-full border border-white/10 text-slate-300 transition" data-filter="web">SQL</button>
+    </div>
+
+    <div id="projectGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- ================= DATA VIZ DEMO ================= -->
+<section id="insights" class="relative py-28 px-6 lg:px-8 border-t border-white/5">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-center">
+    <div class="fade-up">
+      <span class="font-mono text-xs text-cyan-soft tracking-widest uppercase">Live Demo</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2">The chart talks back.</h2>
+      <p class="text-slate-400 mt-3 leading-relaxed">
+        A small taste of how I present findings — toggle the dataset and watch the chart
+        re-render instantly. No page reload, just Chart.js doing its job.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-7">
+        <button data-set="trends" class="viz-btn active font-mono text-xs px-4 py-2.5 rounded-lg border border-cyan-500/40 text-cyan-soft transition">Monthly Trends</button>
+        <button data-set="skills" class="viz-btn font-mono text-xs px-4 py-2.5 rounded-lg border border-white/10 text-slate-300 transition">Skill Proficiency</button>
+      </div>
+    </div>
+
+    <div class="fade-up glass glass-border-glow rounded-2xl p-6 sm:p-8">
+      <canvas id="demoChart" height="260"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNEY / TIMELINE ================= -->
+<section id="journey" class="relative py-28 px-6 lg:px-8 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <div class="fade-up mb-16 max-w-2xl">
+      <span class="font-mono text-xs text-emerald-soft tracking-widest uppercase">Timeline</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2">Education & Journey</h2>
+    </div>
+
+    <div class="relative pl-10">
+      <div class="absolute left-[7px] top-2 bottom-2 w-px timeline-line"></div>
+
+      <div class="fade-up relative mb-14">
+        <div class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-cyan-soft node-pulse"></div>
+        <span class="font-mono text-xs text-cyan-soft">2023 — 2027</span>
+        <h3 class="font-display font-semibold text-xl text-white mt-1">B.Tech, Computer Science Engineering</h3>
+        <p class="text-slate-400 mt-1">Quantum University, Roorkee</p>
+        <p class="text-slate-500 text-sm mt-2 max-w-lg">Coursework and self-driven projects centered on data structures, databases, and applied data science — from cleaning raw CSVs to shipping BI dashboards.</p>
+      </div>
+
+      <div class="fade-up relative mb-14">
+        <div class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-emerald-soft node-pulse" style="animation-delay:.6s"></div>
+        <span class="font-mono text-xs text-emerald-soft">Ongoing</span>
+        <h3 class="font-display font-semibold text-xl text-white mt-1">Machine Learning, in progress</h3>
+        <p class="text-slate-400 mt-1">Independent study & applied notebooks</p>
+        <p class="text-slate-500 text-sm mt-2 max-w-lg">Currently deepening ML fundamentals — regression, classification, and model evaluation — to extend the analytics work into prediction.</p>
+      </div>
+
+      <div class="fade-up relative">
+        <div class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-cyan-soft/70 node-pulse" style="animation-delay:1.2s"></div>
+        <span class="font-mono text-xs text-cyan-soft">Always</span>
+        <h3 class="font-display font-semibold text-xl text-white mt-1">Building in public</h3>
+        <p class="text-slate-400 mt-1">Dashboards, Analyses</p>
+        <p class="text-slate-500 text-sm mt-2 max-w-lg">Shipping small, real projects — EDA notebooks, dashboards, this site — instead of waiting for a perfect one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="relative py-28 px-6 lg:px-8 border-t border-white/5">
+  <div class="max-w-5xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
+    <div class="fade-up">
+      <span class="font-mono text-xs text-cyan-soft tracking-widest uppercase">Contact</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2">Let's talk data.</h2>
+      <p class="text-slate-400 mt-3 leading-relaxed">
+        Open to internships, freelance analysis, and collaborations. Drop a message —
+        I read every one.
+      </p>
+
+      <div class="mt-8 space-y-4 font-mono text-sm">
+        <a href="mailto:sarveshsinha18@gmail.com" class="flex items-center gap-3 text-slate-300 hover:text-cyan-soft transition group">
+          <span class="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center group-hover:border-cyan-500/50 group-hover:shadow-glowCyan transition">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 5h18v14H3V5Zm0 0 9 7 9-7" stroke="currentColor" stroke-width="1.8"/></svg>
+          </span>
+          sarveshsinha18@gmail.com
+        </a>
+        <a href="https://github.com/sarveshs-sinha" class="flex items-center gap-3 text-slate-300 hover:text-cyan-soft transition group">
+          <span class="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center group-hover:border-cyan-500/50 group-hover:shadow-glowCyan transition">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.87 3.15 9 7.53 10.46.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.05-3.06.67-3.71-1.3-3.71-1.3-.5-1.28-1.22-1.62-1.22-1.62-1-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.58 1.2 3.2.92.1-.71.38-1.2.7-1.48-2.44-.28-5.01-1.22-5.01-5.44 0-1.2.43-2.19 1.13-2.96-.11-.28-.49-1.4.11-2.92 0 0 .92-.3 3.02 1.13a10.5 10.5 0 0 1 5.5 0c2.1-1.43 3.02-1.13 3.02-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.76 1.13 2.96 0 4.23-2.58 5.16-5.03 5.43.39.34.74 1.02.74 2.06 0 1.49-.01 2.68-.01 3.05 0 .29.2.64.76.53 4.37-1.46 7.52-5.6 7.52-10.46C23.02 5.24 18.27.5 12 .5Z"/></svg>
+          </span>
+          github.com/sarveshs-sinha
+        </a>
+        <a href="https://www.linkedin.com/in/sarvesh-sinha-b98621288/" class="flex items-center gap-3 text-slate-300 hover:text-cyan-soft transition group">
+          <span class="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center group-hover:border-cyan-500/50 group-hover:shadow-glowCyan transition">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+          </span>
+          linkedin.com/in/sarveshsinha
+        </a>
+      </div>
+    </div>
+
+    <form id="contactForm"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      class="fade-up glass glass-border-glow rounded-2xl p-7 sm:p-8 space-y-6"
+      onsubmit="return handleSubmit(event)">
+
+      <!-- Web3Forms settings -->
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New Portfolio Contact Message">
+      <input type="hidden" name="from_name" value="Sarvesh Portfolio">
+      <input type="hidden" name="replyto" value="">
+      <div class="field">
+        <input type="text" id="nameField" name="name" required placeholder=" " class="peer w-full rounded-lg border border-white/10 focus:border-cyan-500/60 outline-none px-4 pt-5 pb-2 text-sm text-slate-100 transition">
+        <label for="nameField" class="absolute left-4 top-3.5 text-slate-500 text-sm">Name</label>
+      </div>
+      <div class="field">
+        <input type="email" id="emailField" name="email" required placeholder=" " class="peer w-full rounded-lg border border-white/10 focus:border-cyan-500/60 outline-none px-4 pt-5 pb-2 text-sm text-slate-100 transition">
+        <label for="emailField" class="absolute left-4 top-3.5 text-slate-500 text-sm">Email</label>
+      </div>
+      <div class="field">
+        <textarea id="msgField" name="message" required rows="4" placeholder=" " class="peer w-full rounded-lg border border-white/10 focus:border-cyan-500/60 outline-none px-4 pt-5 pb-2 text-sm text-slate-100 transition resize-none"></textarea>
+        <label for="msgField" class="absolute left-4 top-3.5 text-slate-500 text-sm">Message</label>
+      </div>
+      <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan to-emerald text-basedeep font-semibold text-sm px-7 py-3.5 rounded-xl shadow-glowCyan hover:brightness-110 transition">
+        Send Message
+      </button>
+      <p id="formNote" class="text-xs font-mono text-emerald-soft hidden"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="border-t border-white/5 py-8 px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
+    <p class="font-mono">© <span id="year"></span> Sarvesh Sinha. Built with HTML, Tailwind & vanilla JS.</p>
+    <p class="font-mono text-xs">status: <span class="text-emerald-soft">200 OK</span></p>
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
